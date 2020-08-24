@@ -5,9 +5,11 @@ This respository includes the code (including a Jupyter Notebook) to run the mac
 * Utilize this pipeline as a blueprint to implement your own expanded or simplified anlaysis pipeline
 * Utilize as an educational tool/example of how to run python-based data handling, preprocessing, feature selection, machine learning modeling, generating relevant visualizations, and running non-parametric statistical comparisons. Packages such as pandas, scikit-learn and scipy are used.
 * Obtain the code to generate our porposed 'compound feature importance barplots'.
+
 ***
 ## Alternative Pipeline Code
 This code represents our first ML analysis pipeline implementation as described in the paper above. It includes the ExSTraCS machine learning modeler which is a stand alone python implementation (outside of scikit-learn).  As such we 
+
 ***
 # Prerequisites for Use
 ## Environment Requirements
@@ -24,6 +26,7 @@ Additionally, while currently commented out in the file (modeling_methods.py) if
 * conda install -c plotly plotly-orca
 
 Lastly, in order to include the stand-alone algorithm 'ExSTraCS' we needed to call this from the command line within this Jupyter Notebook.  As a result, the part of this notebook running ExSTraCS will only run properly if the path to the working directory used to run this notebook includes no spaces.  In other words if your path includes a folder called 'My Folder' vs. 'My_Folder' you will likely get a run error for ExSTraCS (at least on a Windows machine). Thus, make sure to check that wherever you are running this notebook from, that the entire path to the working directory does note include any spaces. 
+
 ***
 ## Dataset Requirements
 This notebook loads a single dataset to be run through the entire pipeline. Here we summarize the requirements for this dataset:
@@ -35,6 +38,7 @@ This notebook loads a single dataset to be run through the entire pipeline. Here
 * The class labels should be 0 for the major class (i.e. the most frequent class), and 1 for the minor class.  This is important for generation of the precision/recall curve (PRC) plots. 
 * This dataset is saved in the working directory containing the jupyter notebook file, and all other files in this repository.
 * All variables in the dataset have been numerically encoded (otherwise additional data preprocessing may be needed)
+
 ***
 # Usage
 * First, ensure all of the environment and dataset requirments above are satisfied. 
@@ -45,6 +49,18 @@ This notebook loads a single dataset to be run through the entire pipeline. Here
 * Next, in the next cell, 'ML Modeling Hyperparamters (Optional)' you can adjust the hyperparameters of all ML modeling algorithms to be explored in the respective hyperparameter sweeps. You can also adjust the overall optuna settings controlling the basics of how the hyperparameter sweeps are conducted. Note that 'adding' any other hyperparameters that have not been included in this section for a given ML modeler, will require updates to the code in the file 'modeling_methods.py'. We believe that we have included all critical run parameters for each ML algorithm so this should not be an issue for most users.
 * Now that the code as been adapted to your desired dataset/analysis, click 'Kernel' on the Jupyter notebook GUI, and select 'Restart & Run All' to run the script.  
 * Note that due to all that is involved in running this notebook, it may take several hours or more to complete running all analyses. Runtime can be shortened by picking a subset of ML algorithms, picking a smaller number of CV partitions, reducing 'n_trials' and 'hype_cv' which controls hyperparameter optimization, or reducing 'instanceSubset' which controls the maximum number of instances used to run Relief-based feature selection (note: these algorithms scale quadratically with number of training instances). 
+
+***
+## Repository Orientation
+Included in this repository is the following: 
+* The ML pipeline jupyter notebook, used to run the analysis - 'Supervised_Classification_ML_Pipeline.ipynb'
+* An example/test dataset taken from the UCI repository - 'hcc-data_example.txt'
+* A python script used by part 1 of the notebook - 'data_processing_methods.py'
+* A python script used by part 2 of the notebook - 'feature_selection_methods.py'
+* A python script used by part 3 of the notebook - 'modeling_methods.py'
+* A folder containing python code for the ExSTraCS ML algorithm - 'exstracs_2.0.2.1_noclassmutate_lynch'
+* A schematic summarizing the ML analysis pipeline - 'ML pipeline schematic2.png'
+
 ***
 ## Notebook Organization
 ### Part 1: Exploratory analysis, data cleaning, and creating n-fold CV partitioned datasets 
