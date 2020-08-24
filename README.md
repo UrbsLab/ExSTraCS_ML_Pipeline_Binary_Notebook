@@ -11,6 +11,10 @@ This respository includes the code (including a Jupyter Notebook) to run the mac
 This code represents our first ML analysis pipeline implementation as described in the paper above. It includes the ExSTraCS machine learning modeler which is a stand alone python implementation (outside of scikit-learn).  More recently we have implemented scikit-learn compatible versions of ExSTraCS and two other LCS algorithms (i.e. XCS, and eLCS). We have since implemented an updated/improved version of this ML analysis pipeline to include those three new scikit-learn compatible LCS algorithms along with nearest neighbors and gradient boosting classifiers.  For users looking to replicate the pipeline in the above paper, use this present repository. For those looking for the most up-to-date pipeline including 5 additional ML modeling algorithms we recommend using the very similar pipeline available at: https://github.com/UrbsLab/scikit_ML_Pipeline_Binary_Notebook (available soon)
 
 ***
+## Schematic of ML Analysis Pipeline
+![alttext](https://github.com/UrbsLab/ExSTraCS_ML_Pipeline_Binary_Notebook/blob/master/ML%20pipeline%20schematic2.png?raw=true)
+
+***
 # Prerequisites for Use
 ## Environment Requirements
 In order to run this pipeline as a Jupyter Notebook you must have the proper environment set up on your computer. Python 3 as well as a number of Python packages are required.  Most of these requirements are satisfied by installing the most recent version of anaconda (https://docs.anaconda.com/anaconda/install/). We used Anaconda3 with python version 3.7.7 during this pipeline development. In addition to the packages included in anaconda, the following packages will need to be installed separately (or possibly updated, if you have an older version installed):
@@ -102,9 +106,3 @@ Included in this repository is the following:
 
 ## Part 4: ML feature importance vizualization
 Performs normalization and transformation of feature importances scores for all algorithms and generates our proposed 'compound feature importance plots'. 
-
-***
-## Schematic of ML Analysis Pipeline
-
-![alttext](https://github.com/UrbsLab/ExSTraCS_ML_Pipeline_Binary_Notebook/blob/master/ML%20pipeline%20schematic2.png?raw=true)
-
