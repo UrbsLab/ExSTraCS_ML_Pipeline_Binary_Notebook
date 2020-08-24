@@ -101,6 +101,7 @@ Included in this repository is the following:
 - Balanced accuracy is applied as the evaluation metric for the hyperparameter sweep
 
 ## Part 4: ML feature importance vizualization
+Performs normalization and transformation of feature importances scores for all algorithms and generates our proposed 'compound feature importance plots'. 
 
 ***
 ## Schematic of ML Analysis Pipeline
