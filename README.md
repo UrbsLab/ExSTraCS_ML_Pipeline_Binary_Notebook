@@ -106,5 +106,5 @@ Performs normalization and transformation of feature importances scores for all 
 ***
 ## Schematic of ML Analysis Pipeline
 
-<img src="ML pipeline schematic2.png" />
+![alttext](https://github.com/UrbsLab/ExSTraCS_ML_Pipeline_Binary_Notebook/blob/master/ML%20pipeline%20schematic2.png?raw=true)
 
