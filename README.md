@@ -8,7 +8,7 @@ This respository includes the code (including a Jupyter Notebook) to run the mac
 
 ***
 ## Alternative Pipeline Code
-This code represents our first ML analysis pipeline implementation as described in the paper above. It includes the ExSTraCS machine learning modeler which is a stand alone python implementation (outside of scikit-learn).  As such we 
+This code represents our first ML analysis pipeline implementation as described in the paper above. It includes the ExSTraCS machine learning modeler which is a stand alone python implementation (outside of scikit-learn).  More recently we have implemented scikit-learn compatible versions of ExSTraCS and two other LCS algorithms (i.e. XCS, and eLCS). We have since implemented an updated/improved version of this ML analysis pipeline to include those three new scikit-learn compatible LCS algorithms along with nearest neighbors and gradient boosting classifiers.  For users looking to replicate the pipeline in the above paper, use this present repository. For those looking for the most up-to-date pipeline including 5 additional ML modeling algorithms we recommend using the very similar pipeline available at: https://github.com/UrbsLab/scikit_ML_Pipeline_Binary_Notebook
 
 ***
 # Prerequisites for Use
@@ -51,7 +51,7 @@ This notebook loads a single dataset to be run through the entire pipeline. Here
 * Note that due to all that is involved in running this notebook, it may take several hours or more to complete running all analyses. Runtime can be shortened by picking a subset of ML algorithms, picking a smaller number of CV partitions, reducing 'n_trials' and 'hype_cv' which controls hyperparameter optimization, or reducing 'instanceSubset' which controls the maximum number of instances used to run Relief-based feature selection (note: these algorithms scale quadratically with number of training instances). 
 
 ***
-## Repository Orientation
+# Repository Orientation
 Included in this repository is the following: 
 * The ML pipeline jupyter notebook, used to run the analysis - 'Supervised_Classification_ML_Pipeline.ipynb'
 * An example/test dataset taken from the UCI repository - 'hcc-data_example.txt'
@@ -62,8 +62,8 @@ Included in this repository is the following:
 * A schematic summarizing the ML analysis pipeline - 'ML pipeline schematic2.png'
 
 ***
-## Notebook Organization
-### Part 1: Exploratory analysis, data cleaning, and creating n-fold CV partitioned datasets 
+# Notebook Organization
+## Part 1: Exploratory analysis, data cleaning, and creating n-fold CV partitioned datasets 
 - Instances missing a class value are excluded
 - The user can indicate other columns that should be excluded from the analysis
 - The user can turn on/off the option to apply standard scaling to the data prior to CV partitioning or imputation
@@ -74,7 +74,7 @@ Included in this repository is the following:
 - The user can choose the number of CV partitions as well as the strategy for CV partitioning (i.e.  random (R), stratified (S), and matched (M) 
 - CV training and testing datasets are saved as .txt files so that the same partitions may be analyzed external to this code
     
-### Part 2: Feature selection
+## Part 2: Feature selection
 - The user can turn on/off the option to filter out the lowest scoring features in the data (i.e. to conduct not just feature importance evaluation but feature selection)
 - Feature importance evaluation and feature selection are conducted within each respective CV training partition
 - The pipeline reports feature importance estimates via two feature selection algorithms:
@@ -84,7 +84,7 @@ Included in this repository is the following:
 - When selected by the user, feature selection conservatively keeps any feature identified as 'potentially relevant' (i.e. score > 0) by either algorithm
 - Since MultiSURF scales quadratically with the number of training instances, there is an option to utilize a random subset of instances when running this algorithm to save computational time.
 
-### Part 3: Machine learning modeling
+## Part 3: Machine learning modeling
 - Seven ML modeling algorithms have been implemented in this pipeline:
     - Logistic Regression (scikit learn)
     - Decision Tree (scikit learn)
@@ -100,7 +100,7 @@ Included in this repository is the following:
 - ML modeling begins with a hyperparameter sweep conducted with a grid search of hard coded run parameter options (user can edit as needed)
 - Balanced accuracy is applied as the evaluation metric for the hyperparameter sweep
 
-### Part 4: ML feature importance vizualization
+## Part 4: ML feature importance vizualization
 
 ***
 ## Schematic of ML Analysis Pipeline
